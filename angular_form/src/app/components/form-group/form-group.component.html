@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
+        <div class="card">
+            <div class="card-header text-center p-2">
+                <p class="h4">Form Group</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="">firstName:</label>
+                    <input type="text" class="form-control" formControlName="firstName">
+                </div>
+                <small class="p-1 text-danger" *ngIf="FirstName.errors?.['required'] && (FirstName.touched || FirstName.dirty)">{{alertMessages.firstname.required}}</small>
+                <small class="p-1 text-danger" *ngIf="FirstName.errors?.['minlength']">{{alertMessages.firstname.minlength}}</small>
+
+                <div class="form-group mt-3">
+                    <label for="">lastName:</label>
+                    <input type="text" class="form-control" formControlName="lastName">
+                </div>
+                <small class="p-1 text-danger" *ngIf="LastName.errors?.['required'] && (LastName.touched || LastName.dirty)">{{alertMessages.lastname.required}}</small>
+                <small class="p-1 text-danger" *ngIf="LastName.errors?.['minlength']">{{alertMessages.lastname.minlength}}</small>
+
+                <div class="form-group mt-3">
+                    <label for="">email:</label>
+                    <input type="email" class="form-control" formControlName="email">
+                </div>
+                <small class="p-1 text-danger" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">{{alertMessages.email.required}}</small>
+                <small class="p-1 text-danger" *ngIf="Email.errors?.['email']">{{alertMessages.email.invalid}}</small>
+
+                <div class="form-group mt-3">
+                    <label for="">age:</label>
+                    <input type="number" class="form-control" formControlName="age">
+                </div>
+                <small class="p-1 text-danger" *ngIf="Age.errors?.['required'] && ( Age.touched || Age.dirty)">{{alertMessages.age.required}}</small>
+                <small class="p-1 text-danger" *ngIf="Age.errors?.['min']">{{alertMessages.age.min}}</small>
+                <small class="p-1 text-danger" *ngIf="Age.errors?.['max']">{{alertMessages.age.max}}</small>
+
+                <div class="text-center p-3">
+                    <button type="submit" class="btn btn-primary" [disabled]="!userProfileForm.valid">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="container p-3">
+            <ul>
+                <li class="nav-link mt-2">Display Value: {{this.userProfileForm.controls.firstName.value}}</li>
+                <li class="nav-link mt-2">Display Value: {{this.userProfileForm.controls.lastName.value}}</li>
+                <li class="nav-link mt-2">Display Value: {{this.userProfileForm.controls.email.value}}</li>
+                <li class="nav-link mt-2">Display Value: {{this.userProfileForm.controls.age.value}}</li>
+            </ul>
+        </div>
+    </form>
+</div>

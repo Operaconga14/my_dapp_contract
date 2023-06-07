@@ -1,0 +1,29 @@
+<div class="container mt-5 p-5">
+    <div class="card">
+        <div class="card-header p-2 text-center">
+            <p class="h1">Greeting Message</p>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="userMessages" (ngSubmit)="getMessage()">
+                <div class="form-group">
+                    <label for="">Subject</label>
+                    <input type="text" class="form-control mt-2" formControlName="subject">
+                </div>
+                <small class="text-danger p-1" *ngIf="subject.errors?.['required'] && (subject.touched || subject.dirty)">{{alertMessages.subject.required}}</small>
+                <small class="text-danger p-1" *ngIf="subject.errors?.['minlength']">{{alertMessages.subject.minlength}}</small>
+                <pre></pre>
+
+                <div class="form-group">
+                    <label for="">Message</label>
+                    <textarea class="form-control" formControlName="message" cols="30" rows="10"></textarea>
+                </div>
+                <small class="text-danger p-1" *ngIf="message.errors?.['required'] && message.touched">{{alertMessages.message.required}}</small>
+                <small class="text-danger p-1" *ngIf="message.errors?.['minlength']">{{alertMessages.message.minlength}}</small>
+
+                <div class="text-end mt-3">
+                    <button type="submit" class="btn btn-primary" [disabled]="!userMessages.valid">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
