@@ -74,10 +74,9 @@ export class GreetingsComponent implements OnInit{
     abi: MessangerAbi,
     address: environment.MessangerAddress as `0x${string}`,
     functionName: 'updateMessage',
-    account: address,
-    args: [this.f.subject.value, this.f.message.value, {
-      id:0,
-    }]
+    //@ts-ignore
+    account: address as any,
+    args: [this.f.subject.value, this.f.message.value] 
   })
 
   const hash = await walletClient!.writeContract(request);
@@ -95,6 +94,3 @@ export class GreetingsComponent implements OnInit{
  }
   
  }
-
-// console.log(this.userMessages.value);
- // let messages = await greetingsContract.

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Web3Service } from './web3.service';
+import { MessagesListService } from './messages-list.service';
 
-describe('Web3Service', () => {
-  let service: Web3Service;
+describe('MessagesListService', () => {
+  let service: MessagesListService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Web3Service);
+    service = TestBed.inject(MessagesListService);
   });
 
   it('should be created', () => {

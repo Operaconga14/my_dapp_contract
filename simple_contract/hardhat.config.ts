@@ -18,6 +18,11 @@ const config: HardhatUserConfig = {
     ganache: {
       url: "http://127.0.0.1:7545",
       accounts: []
+    },
+    fantomtest: {
+      url: 'https://rpc.testnet.fantom.network',
+      chainId: 4002,
+      accounts: []
     }
   }
 };

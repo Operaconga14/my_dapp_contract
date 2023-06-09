@@ -12,6 +12,7 @@ import { FormGroupComponent } from './components/form-group/form-group.component
 import { FormsContainersComponent } from './components/forms-containers/forms-containers.component';
 import { BlockchainTutorComponent } from './components/blockchain-tutor/blockchain-tutor.component';
 import { Web3ModalCoreButtonWrapperModule } from './Web3Modal/web3modal.module';
+import { ViewMessageComponent } from './components/view-message/view-message.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { Web3ModalCoreButtonWrapperModule } from './Web3Modal/web3modal.module';
     FormGroupComponent,
     FormsContainersComponent,
     BlockchainTutorComponent,
+    ViewMessageComponent,
     
   ],
   imports: [

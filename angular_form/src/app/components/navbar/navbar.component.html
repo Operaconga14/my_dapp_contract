@@ -8,12 +8,23 @@
             <li class="nav-item"><a routerLink="/form-control" class="nav-link text-white">Form Control</a></li>
             <li class="nav-item"><a class="nav-link text-white" routerLink="/form-group">Form Group</a></li>
             <li class="nav-item"><a class="nav-link text-white" routerLink="/greetings">Greeting</a></li>
+            <li class="nav-item"><a class="nav-link text-white" routerLink="/view-message">View Message</a></li>
         </ul>
 
         <!-- Connect Wallt Button -->
-        <button class="btn btn-success" (click)="connectAccount()">Connect</button>
-        <!-- <app-w3-mcore-button-component-wrapper></app-w3-mcore-button-component-wrapper> -->
-      </nav>
+        <!-- <button class="btn btn-success" (click)="connectAccount()">Connect</button> -->
+        <app-w3-mcore-button-component-wrapper></app-w3-mcore-button-component-wrapper>
 
+        
+          
+        <!-- <button id="my-button" onclick="web3modal.openModal()">Connect Wallet</button> -->
+    </nav>
+
+    <!-- <script>
+        document.getElementById('my-button').addEventListener('click', () => {
+            console.log('clicked')
+            web3modal.openModal()
+          })
+    </script> -->
     
 </div>
